@@ -83,6 +83,8 @@ Si tienes un dominio personalizado (ej: `lasemilla.com`):
 4. Selecciona el servicio PostgreSQL y la variable `DATABASE_URL`
 5. Esto conectará automáticamente tu aplicación con la base de datos
 
+**✅ Importante:** El código ya está configurado para usar automáticamente la variable `DATABASE_URL`. No necesitas hacer nada más en el código - solo asegúrate de que la variable esté referenciada en Railway.
+
 ### 6. Esperar el Despliegue
 
 1. Railway comenzará a construir y desplegar tu aplicación automáticamente
@@ -97,6 +99,23 @@ Si tienes un dominio personalizado (ej: `lasemilla.com`):
 4. Visita la URL en tu navegador para verificar que todo funciona
 5. Deberías ver tu aplicación funcionando correctamente
 6. Revisa los logs en Railway si hay algún problema
+
+### 🗄️ Probar la Conexión a la Base de Datos
+
+Para verificar que la base de datos esté conectada correctamente, visita:
+
+```
+https://tu-dominio.up.railway.app/api/db/test
+```
+
+Este endpoint te mostrará:
+- ✅ Si la conexión a PostgreSQL es exitosa
+- 📊 Información de la versión de PostgreSQL
+- 🔗 Detalles de la conexión
+
+Si ves un error, verifica que:
+1. El servicio PostgreSQL esté activo en Railway
+2. La variable `DATABASE_URL` esté referenciada en el servicio de tu aplicación
 
 **Para encontrar tu URL en cualquier momento:**
 - Ve a tu servicio en Railway → **Settings** → **Networking**
