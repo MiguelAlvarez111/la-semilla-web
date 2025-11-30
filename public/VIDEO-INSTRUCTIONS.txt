@@ -1,0 +1,20 @@
+INSTRUCCIONES PARA EL VIDEO HERO:
+
+1. Coloca un video MP4 en esta carpeta con el nombre: hero-video.mp4
+
+2. Especificaciones recomendadas:
+   - Formato: MP4 (H.264)
+   - Duración: Loop corto (5-10 segundos recomendado)
+   - Resolución: 1920x1080 (Full HD) o superior
+   - Sin audio (será reproducido en silencio)
+   - Tema: Gente feliz, comunidad, ambiente positivo
+
+3. El video se reproducirá automáticamente en loop como fondo del hero section.
+
+4. Si no tienes un video, puedes usar uno de stock de:
+   - Pexels Videos (gratis)
+   - Unsplash Videos (gratis)
+   - Pixabay Videos (gratis)
+
+Ejemplo de búsqueda: "happy people community church"
+
