@@ -113,7 +113,7 @@ export default function DarPage() {
           {/* Mensaje Bíblico */}
           <div className="bg-zinc-50 rounded-2xl p-8 text-center border border-zinc-200">
             <p className="text-lg text-muted-foreground mb-6 italic">
-              "Cada uno debe dar según lo que haya decidido en su corazón, no de mala gana ni por obligación, porque Dios ama al que da con alegría."
+              &ldquo;Cada uno debe dar según lo que haya decidido en su corazón, no de mala gana ni por obligación, porque Dios ama al que da con alegría.&rdquo;
             </p>
             <p className="font-semibold text-gray-900">— 2 Corintios 9:7</p>
           </div>
