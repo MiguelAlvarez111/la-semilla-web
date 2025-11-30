@@ -1,0 +1,143 @@
+# 🚂 Guía de Despliegue en Railway
+
+Esta guía te ayudará a desplegar tu aplicación Next.js y una base de datos PostgreSQL en Railway.
+
+## 📋 Requisitos Previos
+
+1. Cuenta en [Railway](https://railway.app/) (puedes registrarte con GitHub)
+2. Repositorio en GitHub conectado (ya está hecho ✅)
+
+## 🚀 Pasos para Desplegar
+
+### 1. Crear un Nuevo Proyecto en Railway
+
+1. Ve a [Railway Dashboard](https://railway.app/dashboard)
+2. Haz clic en **"New Project"**
+3. Selecciona **"Deploy from GitHub repo"**
+4. Conecta tu cuenta de GitHub si aún no lo has hecho
+5. Selecciona el repositorio: `MiguelAlvarez111/la-semilla-web`
+
+### 2. Agregar Servicio de Base de Datos PostgreSQL
+
+1. En tu proyecto de Railway, haz clic en **"+ New"**
+2. Selecciona **"Database"**
+3. Elige **"Add PostgreSQL"**
+4. Railway creará automáticamente la base de datos y configurará la variable de entorno `DATABASE_URL`
+
+### 3. Configurar Variables de Entorno
+
+1. Selecciona el servicio de tu aplicación Next.js
+2. Ve a la pestaña **"Variables"**
+3. Agrega las siguientes variables:
+
+   ```
+   NODE_ENV=production
+   PORT=3000
+   ```
+
+   **Nota:** Railway detectará automáticamente que es una aplicación Next.js y configurará el puerto.
+
+4. **Opcional:** Si necesitas una URL pública para la aplicación:
+   - Railway generará automáticamente una URL cuando despliegues
+   - Puedes configurar un dominio personalizado más tarde
+
+### 4. Conectar la Base de Datos a la Aplicación
+
+1. En el servicio de PostgreSQL, ve a la pestaña **"Variables"**
+2. Copia la variable `DATABASE_URL` (se crea automáticamente)
+3. En el servicio de tu aplicación Next.js, ve a **"Variables"** → **"Reference Variable"**
+4. Selecciona el servicio PostgreSQL y la variable `DATABASE_URL`
+5. Esto conectará automáticamente tu aplicación con la base de datos
+
+### 5. Configurar Dominio Público
+
+1. En el servicio de tu aplicación, ve a la pestaña **"Settings"**
+2. Bajo **"Networking"**, haz clic en **"Generate Domain"**
+3. Railway creará una URL pública como: `tu-proyecto-production.up.railway.app`
+4. **Opcional:** Puedes configurar un dominio personalizado más tarde
+
+### 6. Esperar el Despliegue
+
+1. Railway comenzará a construir y desplegar tu aplicación automáticamente
+2. Puedes ver el progreso en la pestaña **"Deployments"**
+3. Una vez completado, tu aplicación estará disponible en la URL pública
+
+## 🔍 Verificar el Despliegue
+
+1. Visita la URL pública generada por Railway
+2. Deberías ver tu aplicación funcionando
+3. Revisa los logs en Railway si hay algún problema
+
+## 📊 Gestión de la Base de Datos
+
+### Acceder a PostgreSQL
+
+1. En Railway, selecciona el servicio PostgreSQL
+2. Ve a la pestaña **"Connect"**
+3. Ahí encontrarás:
+   - **Host:** Para conexiones externas
+   - **Port:** Puerto de la base de datos
+   - **Database:** Nombre de la base de datos
+   - **User:** Usuario
+   - **Password:** Contraseña
+
+### Conectar desde Herramientas Externas
+
+Puedes usar herramientas como:
+- **pgAdmin**
+- **DBeaver**
+- **TablePlus**
+- **psql** (línea de comandos)
+
+Usa la `DATABASE_URL` que Railway proporciona en las variables de entorno.
+
+## 🔧 Solución de Problemas
+
+### La aplicación no inicia
+
+1. Revisa los logs en Railway
+2. Verifica que todas las variables de entorno estén configuradas
+3. Asegúrate de que el comando `npm start` funcione localmente
+
+### Error de conexión a la base de datos
+
+1. Verifica que la variable `DATABASE_URL` esté referenciada correctamente
+2. Asegúrate de que el servicio PostgreSQL esté activo
+3. Revisa los logs de ambos servicios
+
+### Build falla
+
+1. Revisa los logs de build en Railway
+2. Asegúrate de que todas las dependencias estén en `package.json`
+3. Verifica que no haya errores de TypeScript
+
+## 💰 Planes de Railway
+
+- **Hobby Plan:** $5/mes - Incluye $5 de créditos gratuitos
+- **Pro Plan:** $20/mes - Para uso comercial
+
+Railway ofrece $5 de créditos gratuitos mensuales para empezar.
+
+## 🔄 Actualizaciones Automáticas
+
+Railway desplegará automáticamente cada vez que hagas push a la rama `main` en GitHub. Para desactivar esto, ve a **Settings** → **"Deploy from GitHub"**.
+
+## 📝 Próximos Pasos
+
+Una vez desplegado, puedes:
+
+1. Configurar un dominio personalizado en Railway
+2. Configurar CI/CD adicional si es necesario
+3. Agregar más servicios (Redis, etc.) si los necesitas
+4. Configurar backups de la base de datos
+
+## 🆘 Soporte
+
+- [Documentación de Railway](https://docs.railway.app/)
+- [Discord de Railway](https://discord.gg/railway)
+- [Status de Railway](https://status.railway.app/)
+
+---
+
+¡Tu aplicación debería estar funcionando ahora! 🎉
+

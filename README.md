@@ -116,6 +116,34 @@ Cada grupo tiene su propio tema visual:
 - **Mujeres**: Editorial/Soft (Colores pasteles cálidos)
 - **Kids**: Alegre/Vibrante (Amarillos y naranjas)
 
+## 🚂 Despliegue en Railway
+
+Este proyecto está configurado para desplegarse fácilmente en Railway junto con una base de datos PostgreSQL.
+
+### Configuración Rápida
+
+1. **Conectar repositorio a Railway:**
+   - Ve a [Railway Dashboard](https://railway.app/dashboard)
+   - Crea un nuevo proyecto desde GitHub
+   - Selecciona este repositorio
+
+2. **Agregar base de datos:**
+   - En Railway, haz clic en "+ New" → "Database" → "Add PostgreSQL"
+   - Railway configurará automáticamente la variable `DATABASE_URL`
+
+3. **Generar dominio público:**
+   - En el servicio de tu aplicación, ve a "Settings"
+   - Bajo "Networking", haz clic en "Generate Domain"
+   - Tu aplicación estará disponible en la URL generada
+
+4. **Variables de entorno:**
+   - Railway configurará automáticamente las variables necesarias
+   - La base de datos se conectará automáticamente usando `DATABASE_URL`
+
+### Documentación Completa
+
+Para instrucciones detalladas, consulta [RAILWAY_DEPLOY.md](./RAILWAY_DEPLOY.md)
+
 ## 🚧 Próximos Pasos
 
 - [ ] Integrar base de datos real
